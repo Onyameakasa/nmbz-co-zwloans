@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NMB Bank Zimbabwe - USD Loans | Fast & Reliable</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+        
+        :root {
+            --primary: #001f3f;
+            --primary-dark: #000f1f;
+            --primary-light: #e8f0f8;
+            --accent: #D4AF37;
+            --accent-light: #f5ead3;
+            --white: #ffffff;
+            --gray-100: #f5f7fa;
+            --gray-200: #e8ecf1;
+            --gray-600: #6c757d;
+            --gray-700: #4a4a4a;
+            --gray-900: #1a1a1a;
+            --radius-lg: 24px;
+            --radius-md: 16px;
+            --radius-sm: 10px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--white); color: var(--gray-900); line-height: 1.6; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        
+        /* Header */
+        header { background: var(--primary); padding: 20px 0; position: sticky; top: 0; z-index: 1000; }
+        .nav-content { display: flex; justify-content: space-between; align-items: center; }
+        .logo img { height: 45px; }
+        .nav-links { display: flex; list-style: none; gap: 30px; }
+        .nav-links a { color: var(--white); text-decoration: none; font-weight: 600; font-size: 15px; transition: var(--transition); }
+        .nav-links a:hover { color: var(--accent); }
+        .nav-btns { display: flex; gap: 15px; }
+        .btn { padding: 12px 24px; border-radius: var(--radius-sm); font-weight: 700; cursor: pointer; transition: var(--transition); border: none; font-family: inherit; }
+        .btn-outline { background: transparent; border: 1.5px solid var(--white); color: var(--white); }
+        .btn-primary { background: var(--accent); color: var(--primary); }
+        .btn-primary:hover { background: var(--white); }
+
+        /* Hero */
+        .hero { background: linear-gradient(135deg, var(--primary) 0%, #003366 100%); padding: 100px 0; color: var(--white); }
+        .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+        .hero-text h1 { font-size: 56px; font-weight: 800; line-height: 1.1; margin-bottom: 24px; }
+        .hero-text p { font-size: 18px; opacity: 0.9; margin-bottom: 40px; max-width: 500px; }
+        .hero-badge { background: rgba(255,255,255,0.1); padding: 40px; border-radius: var(--radius-lg); text-align: center; backdrop-filter: blur(10px); }
+        .hero-badge i { font-size: 48px; color: var(--accent); margin-bottom: 20px; }
+        .hero-badge h3 { font-size: 24px; margin-bottom: 8px; }
+
+        /* Sections */
+        section { padding: 100px 0; }
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-header h2 { font-size: 36px; color: var(--primary); margin-bottom: 16px; }
+        
+        /* Cards */
+        .loan-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .loan-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-lg); padding: 40px; transition: var(--transition); }
+        .loan-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
+        .loan-icon { width: 60px; height: 60px; background: var(--primary-light); border-radius: 15px; display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 24px; margin-bottom: 24px; }
+        .loan-card h3 { font-size: 22px; margin-bottom: 16px; }
+        .loan-details { margin: 24px 0; }
+        .detail-row { display: flex; justify-content: space-between; margin-bottom: 12px; font-size: 14px; }
+        .detail-label { color: var(--gray-600); }
+        .detail-value { font-weight: 700; color: var(--primary); }
+
+        /* Modal */
+        .modal { position: fixed; inset: 0; background: rgba(0,0,0,0.6); display: none; align-items: center; justify-content: center; z-index: 2000; padding: 20px; backdrop-filter: blur(5px); }
+        .modal-content { background: var(--white); width: 100%; max-width: 500px; border-radius: var(--radius-lg); padding: 40px; position: relative; }
+        .close-modal { position: absolute; top: 20px; right: 20px; font-size: 24px; cursor: pointer; color: var(--gray-600); }
+        .modal h2 { font-size: 28px; color: var(--primary); margin-bottom: 12px; text-align: center; }
+        .modal p { text-align: center; color: var(--gray-600); margin-bottom: 30px; }
+        .form-group { margin-bottom: 20px; }
+        .form-label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 8px; }
+        .form-select, .form-input { width: 100%; padding: 14px; border: 1.5px solid var(--gray-200); border-radius: var(--radius-sm); font-size: 16px; font-family: inherit; outline: none; transition: var(--transition); }
+        .form-select:focus, .form-input:focus { border-color: var(--primary); }
+        
+        /* Footer */
+        footer { background: var(--gray-100); padding: 80px 0 40px; border-top: 1px solid var(--gray-200); }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 60px; }
+        .footer-col h4 { margin-bottom: 24px; font-size: 18px; color: var(--primary); }
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 12px; }
+        .footer-col ul a { color: var(--gray-600); text-decoration: none; transition: var(--transition); }
+        .footer-col ul a:hover { color: var(--primary); }
+        .footer-bottom { text-align: center; padding-top: 40px; border-top: 1px solid var(--gray-200); color: var(--gray-600); font-size: 14px; }
+
+        @media (max-width: 992px) {
+            .hero-grid, .loan-grid, .footer-grid { grid-template-columns: 1fr; }
+            .hero-text h1 { font-size: 40px; }
+            .nav-links, .nav-btns { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container nav-content">
+        <a href="#" class="logo"><img src="logo.png" alt="NMB Bank"></a>
+        <ul class="nav-links">
+            <li><a href="#loans">Loans</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#testimonials">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="nav-btns">
+            <button class="btn btn-outline" onclick="location.href='login.html'">Sign In</button>
+            <button class="btn btn-primary" onclick="openModal()">Apply Now</button>
+        </div>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="container hero-grid">
+        <div class="hero-text">
+            <h1>Fast USD Loans<br>For Your Dreams</h1>
+            <p>Get up to USD 25,000 with competitive rates starting from 5% p.a. Quick approval and flexible repayment tailored to you.</p>
+            <div style="display:flex; gap:15px;">
+                <button class="btn btn-primary" onclick="openModal()">Apply Now</button>
+                <button class="btn btn-outline">Learn More</button>
+            </div>
+        </div>
+        <div class="hero-badge">
+            <i class="fas fa-bolt"></i>
+            <h3>Instant Approval</h3>
+            <p>Within 24 Hours</p>
+        </div>
+    </div>
+</section>
+
+<section id="loans">
+    <div class="container">
+        <div class="section-header">
+            <h2>Our Loan Products</h2>
+            <p>Choose the loan that best fits your financial needs</p>
+        </div>
+        <div class="loan-grid">
+            <!-- Salary Loan -->
+            <div class="loan-card">
+                <div class="loan-icon"><i class="fas fa-wallet"></i></div>
+                <h3>Salary Loan</h3>
+                <p>Borrow up to USD 25,000 if you receive your salary through NMB Bank.</p>
+                <div class="loan-details">
+                    <div class="detail-row"><span class="detail-label">Amount Range</span><span class="detail-value">USD 500 - 25,000</span></div>
+                    <div class="detail-row"><span class="detail-label">Interest Rate</span><span class="detail-value">6% - 7% p.a.</span></div>
+                    <div class="detail-row"><span class="detail-label">Tenor</span><span class="detail-value">Up to 24 Months</span></div>
+                </div>
+                <button class="btn btn-primary" style="width:100%" onclick="openModal('Salary Loan')">Apply Now</button>
+            </div>
+            <!-- School Fees -->
+            <div class="loan-card">
+                <div class="loan-icon"><i class="fas fa-graduation-cap"></i></div>
+                <h3>School Fees Loan</h3>
+                <p>Cover education costs with direct payment to schools and fixed rates.</p>
+                <div class="loan-details">
+                    <div class="detail-row"><span class="detail-label">Amount Range</span><span class="detail-value">USD 100 - 25,000</span></div>
+                    <div class="detail-row"><span class="detail-label">Interest Rate</span><span class="detail-value">5% p.a.</span></div>
+                    <div class="detail-row"><span class="detail-label">Tenor</span><span class="detail-value">12 Months</span></div>
+                </div>
+                <button class="btn btn-primary" style="width:100%" onclick="openModal('School Fees')">Apply Now</button>
+            </div>
+            <!-- Business Loan -->
+            <div class="loan-card">
+                <div class="loan-icon"><i class="fas fa-rocket"></i></div>
+                <h3>Business Loan</h3>
+                <p>Scale your operations with capital and flexible terms.</p>
+                <div class="loan-details">
+                    <div class="detail-row"><span class="detail-label">Amount Range</span><span class="detail-value">USD 1,000 - 25,000</span></div>
+                    <div class="detail-row"><span class="detail-label">Interest Rate</span><span class="detail-value">7% - 8% p.a.</span></div>
+                    <div class="detail-row"><span class="detail-label">Tenor</span><span class="detail-value">Up to 36 Months</span></div>
+                </div>
+                <button class="btn btn-primary" style="width:100%" onclick="openModal('Business Expansion')">Apply Now</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Reason Modal -->
+<div class="modal" id="reasonModal">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeModal('reasonModal')">&times;</span>
+        <h2>Select Loan Type</h2>
+        <p>Choose the reason for your loan</p>
+        <div class="form-group">
+            <label class="form-label">What do you need the loan for?</label>
+            <select class="form-select" id="loanReason">
+                <option value="">-- Select Loan Type --</option>
+                <option value="Salary Loan">Salary Loan</option>
+                <option value="School Fees">School Fees</option>
+                <option value="Business Expansion">Business Expansion</option>
+                <option value="Personal Needs">Personal Needs</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+        <button class="btn btn-primary" style="width:100%" onclick="goToAmount()">Continue &rarr;</button>
+    </div>
+</div>
+
+<!-- Amount Modal -->
+<div class="modal" id="amountModal">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeModal('amountModal')">&times;</span>
+        <h2 id="amountModalTitle">Enter Amount</h2>
+        <p>How much do you need?</p>
+        <div class="form-group">
+            <label class="form-label">Loan Amount (USD)</label>
+            <input type="number" class="form-input" id="loanAmount" placeholder="Enter amount (100 - 25,000)">
+        </div>
+        <div class="form-group">
+            <label class="form-label">Repayment Period (Months)</label>
+            <select class="form-select" id="loanTenor">
+                <option value="">-- Select Period --</option>
+                <option value="6">6 Months</option>
+                <option value="12">12 Months</option>
+                <option value="18">18 Months</option>
+                <option value="24">24 Months</option>
+                <option value="36">36 Months</option>
+            </select>
+        </div>
+        <div id="calcBox" style="display:none; background:var(--primary); color:white; padding:20px; border-radius:var(--radius-sm); margin-bottom:20px;">
+            <div class="detail-row"><span style="opacity:0.8">Principal Amount</span><span id="calcPrincipal" style="font-weight:700"></span></div>
+            <div class="detail-row"><span style="opacity:0.8">Interest Rate</span><span id="calcRate" style="font-weight:700"></span></div>
+            <div class="detail-row"><span style="opacity:0.8">Processing Fee (5%)</span><span id="calcFee" style="font-weight:700"></span></div>
+            <div style="height:1px; background:rgba(255,255,255,0.1); margin:10px 0;"></div>
+            <div class="detail-row"><span style="font-weight:700">Total Repayment</span><span id="calcTotal" style="color:var(--accent); font-weight:800; font-size:18px;"></span></div>
+        </div>
+        <button class="btn btn-primary" style="width:100%" onclick="goToDetails()">Continue Application &rarr;</button>
+    </div>
+</div>
+
+<footer>
+    <div class="container footer-grid">
+        <div class="footer-col">
+            <img src="logo.png" alt="NMB Bank" style="height:40px; margin-bottom:20px;">
+            <p style="color:var(--gray-600)">Empowering Zimbabweans through accessible and reliable financial solutions.</p>
+        </div>
+        <div class="footer-col">
+            <h4>NMB Bank</h4>
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Press Room</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Products</h4>
+            <ul>
+                <li><a href="#">Salary Loans</a></li>
+                <li><a href="#">Business Loans</a></li>
+                <li><a href="#">School Fees</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Support</h4>
+            <ul>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        &copy; 2026 NMB Bank Limited. Licensed Financial Services Provider.
+    </div>
+</footer>
+
+<script>
+    function openModal(reason = '') {
+        if (reason) document.getElementById('loanReason').value = reason;
+        document.getElementById('reasonModal').style.display = 'flex';
+    }
+
+    function closeModal(id) {
+        document.getElementById(id).style.display = 'none';
+    }
+
+    function goToAmount() {
+        const reason = document.getElementById('loanReason').value;
+        if (!reason) return alert('Please select a loan type');
+        
+        sessionStorage.setItem('loanReason', reason);
+        closeModal('reasonModal');
+        document.getElementById('amountModalTitle').textContent = reason + ' - Enter Amount';
+        document.getElementById('amountModal').style.display = 'flex';
+    }
+
+    const amountInput = document.getElementById('loanAmount');
+    const tenorSelect = document.getElementById('loanTenor');
+
+    function updateCalc() {
+        const amount = parseFloat(amountInput.value);
+        const tenor = parseInt(tenorSelect.value);
+        
+        if (amount && tenor) {
+            const rate = 6.5; // Example fixed rate
+            const fee = amount * 0.05;
+            const total = amount * (1 + (rate/100) * (tenor/12));
+            
+            document.getElementById('calcPrincipal').textContent = 'USD ' + amount.toLocaleString();
+            document.getElementById('calcRate').textContent = rate + '% p.a.';
+            document.getElementById('calcFee').textContent = 'USD ' + fee.toLocaleString();
+            document.getElementById('calcTotal').textContent = 'USD ' + total.toLocaleString(undefined, {minimumFractionDigits: 2});
+            document.getElementById('calcBox').style.display = 'block';
+        } else {
+            document.getElementById('calcBox').style.display = 'none';
+        }
+    }
+
+    amountInput.addEventListener('input', updateCalc);
+    tenorSelect.addEventListener('change', updateCalc);
+
+    function goToDetails() {
+        const amount = amountInput.value;
+        const tenor = tenorSelect.value;
+        if (!amount || !tenor) return alert('Please enter amount and period');
+        
+        localStorage.setItem('loanAmount', amount);
+        sessionStorage.setItem('loanTenor', tenor);
+        window.location.href = 'details.html';
+    }
+</script>
+
+</body>
+</html>
